@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Version="28" AppVersion="5.8.2.11" ReadKey="readkey.117Viy7oh2U=.A6lAQK+Uw20HjpoDYzTZfQ==.4MmgCVIK0ui7TyRZl/7S7nLNYYCNUbl/MSr2uOPaKQ0zHmJie6hYDHqPkS3gMe5q5y5L2B+1KvVHl9vzC/M8Nhrjfq5f0xGDh5xTDAjXGMk=.nyX1gYvCEflU9yAHcy4s+QF37fkNb1Ato7tqh//64M8=." WriteKeyPublic="BgIAAACkAABSU0ExAAgAAAEAAQB1RKBdiG8XswzM7V2bKcv+qmC4LqAFThIAZ82WlNHpqcWZ+aEnSzKzxd+vQDmjXVV8ri+QZ9twYuBfp54wBPuotctZkw7JU1U+JyVj6xBX9CwIm+0R2HQ3Zi5w7PppUsBaIqPnNxdaFqdKconWJL2J8BugwMX42vhovkpxApKEUlE0Ytxv9okBSv7OodG6p87XiDemg7N+/3iOdXkNvLl9vlTUj51TSLmqRIJodZ3SoGx4OOm5E1d/FRrVAJtkO0oFCaZcopv0IYRN29S8NuZ8f1JX03hq5TvZBJmPNNZlgUlhaht5IQmlRc2oTj4RRIIUCcddKARyv/e/KaUowz32" StartModuleName="Main" EditedBy="ProdAnalytics1\MikeAdmin" LastEdited="2025-01-06T19:23:55.6667722Z" ComplexityLevel="Beginner" Signature="IDAHMAcuGolEovOT0Jb7BsIDn/38vKxaCsPmVICp9hc=">
+  <Modules>
+    <Module Name="Main" AutoRun="true" SelectedGroupName="Group 1">
+      <Groups>
+        <Group Name="Group 1">
+          <ModelObjects>
+            <Chart Name="Chart 1" Left="1413" Top="550" Width="500" Height="295" IsMinimized="false" SourceTableName="Override" Style="Horizontal" BarCompositionType="Neighbors" YAxisIncludes0="true" AutoScroll="true" MinPointDistance="3" IsLegendExpanded="true">
+              <Series />
+              <Categories>
+                <Category SortType="Values" SortOrder="Ascending">
+                  <ColumnNames />
+                </Category>
+              </Categories>
+            </Chart>
+            <Chart Name="Chart 2" Left="1222" Top="75" Width="500" Height="300" IsMinimized="false" Style="Horizontal" BarCompositionType="Neighbors" YAxisIncludes0="true" AutoScroll="true" MinPointDistance="3" IsLegendExpanded="true">
+              <Series />
+              <Categories>
+                <Category SortType="Values" SortOrder="Ascending">
+                  <ColumnNames />
+                </Category>
+              </Categories>
+            </Chart>
+            <Table Name="CustFile" Left="51" Top="459" Width="246" Height="200" IsMinimized="false" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail (4)" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Remove" FailIfColumnsNotFound="true">
+                  <ColumnNames>
+                    <Item>Age</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="CustFile (2)" Left="314" Top="460" Width="232" Height="154" IsMinimized="true" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="CustFile" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>Ref</Item>
+                    <Item>Bal_Check</Item>
+                    <Item>Bal_MoneyMarket</Item>
+                    <Item>Bal_Savings</Item>
+                    <Item>Bal_CD</Item>
+                    <Item>Bal_Loan</Item>
+                    <Item>Bal_Retirement</Item>
+                    <Item>Bal_Equity</Item>
+                    <Item>Bal_Mortgage</Item>
+                    <Item>Bal_AutoLoan</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Bal_CD" ColumnName="Bal_Retirement" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Bal_Equity" ColumnName="Bal_AutoLoan" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="CustFile (3)" Left="316" Top="533" Width="228" Height="300" IsMinimized="true" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="CustFile" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>Ref</Item>
+                    <Item>Total_Check</Item>
+                    <Item>Total_MoneyMarket</Item>
+                    <Item>Total_Savings</Item>
+                    <Item>Total_CD</Item>
+                    <Item>Total_Loan</Item>
+                    <Item>Total_Retirement</Item>
+                    <Item>Total_Equity</Item>
+                    <Item>Total_Mortgage</Item>
+                    <Item>Total_AutoLoan</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Total_CD" ColumnName="Total_Retirement" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Total_Equity" ColumnName="Total_AutoLoan" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="CustFile (4)" Left="320" Top="610" Width="232" Height="164" IsMinimized="false" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="CustFile" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>Ref</Item>
+                    <Item>Deposit_Balance</Item>
+                    <Item>Loan_Balance</Item>
+                    <Item>Nmc_balance</Item>
+                    <Item>Revenue</Item>
+                    <Item>NUM_ACCTS</Item>
+                    <Item>Deposit_Count</Item>
+                    <Item>Loan_Count</Item>
+                    <Item>Nmc_count</Item>
+                    <Item>BillPay</Item>
+                    <Item>DirectDeposit</Item>
+                    <Item>New</Item>
+                    <Item>Yr10P</Item>
+                    <Item>Tenure</Item>
+                    <Item>Current</Item>
+                    <Item>Dormant</Item>
+                    <Item>Gone</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Ref" ColumnName="NUM_ACCTS" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="NUM_ACCTS" ColumnName="Deposit_Count" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Deposit_Balance" ColumnName="Loan_Count" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Loan_Balance" ColumnName="Nmc_count" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Revenue" ColumnName="New" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="New" ColumnName="Yr10P" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Yr10P" ColumnName="Tenure" />
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Tenure" ColumnName="Dormant" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="CustFile (5)" Left="625" Top="499" Width="313" Height="255" IsMinimized="false" ActiveActionIndex="3">
+              <Actions>
+                <DeriveTableAction SourceTableName="CustFile (4)" IsConditional="false" />
+                <MergeAction SecondTableName="CustFile (3)" SecondTableExists="true" MergeMode="Lookup">
+                  <Columns>
+                    <Item>Total_Check</Item>
+                    <Item>Total_MoneyMarket</Item>
+                    <Item>Total_Savings</Item>
+                    <Item>Total_CD</Item>
+                    <Item>Total_Retirement</Item>
+                    <Item>Total_Loan</Item>
+                    <Item>Total_Equity</Item>
+                    <Item>Total_AutoLoan</Item>
+                    <Item>Total_Mortgage</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="Ref" Name2="Ref" />
+                  </MatchingColumns>
+                </MergeAction>
+                <MergeAction SecondTableName="CustFile (2)" SecondTableExists="true" MergeMode="Lookup">
+                  <Columns>
+                    <Item>Bal_Check</Item>
+                    <Item>Bal_MoneyMarket</Item>
+                    <Item>Bal_Savings</Item>
+                    <Item>Bal_CD</Item>
+                    <Item>Bal_Retirement</Item>
+                    <Item>Bal_Loan</Item>
+                    <Item>Bal_Equity</Item>
+                    <Item>Bal_AutoLoan</Item>
+                    <Item>Bal_Mortgage</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="Ref" Name2="Ref" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ExportDelimitedTextAction DecimalSeparator="Point" WrapTextMode="Auto" DontWriteColumnHeaders="false" PreserveFormatting="false" ExportFileMode="Create" DontWriteBom="false" FileExistsOption="Overwrite">
+                  <FileName Value="Cperf.txt" Type="Path" />
+                  <Separator SeparatorType="Comma" />
+                  <Encoding EncodingType="UTF8" />
+                </ExportDelimitedTextAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="Detail" Left="47" Top="20" Width="378" Height="188" IsMinimized="false" ActiveActionIndex="8">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ThousandSeparator="Comma" ShowParsingErrors="false" IgnoreQuoting="false" NumericValuesTreatmentOption="AlwaysAsNumbers" ColumnsDontHaveHeaders="false" LoadAllColumns="true" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false">
+                  <MetaColumns>
+                    <MetaColumn OriginalName="Bal_Savings" Width="115" />
+                  </MetaColumns>
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="AMD0103000224020100029315.txt" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Tab" />
+                  <Encoding EncodingType="UTF8" />
+                </ImportDelimitedTextAction>
+                <KeepRemoveColumnsAction Mode="Remove" FailIfColumnsNotFound="true">
+                  <ColumnNames>
+                    <Item>HHKey</Item>
+                    <Item>Bal_CreditCard</Item>
+                    <Item>Total_CreditCard</Item>
+                    <Item>Bal_Insurance</Item>
+                    <Item>Total_Insurance</Item>
+                    <Item>Bal_HSA</Item>
+                    <Item>Total_HSA</Item>
+                    <Item>Segmentation_code</Item>
+                    <Item>Segmentation_category</Item>
+                    <Item>Estatement</Item>
+                    <Item>DebitCard</Item>
+                    <Item>MobileBanking</Item>
+                    <Item>OnlineBanking</Item>
+                    <Item>LoanStatus</Item>
+                    <Item>ChargedOff</Item>
+                    <Item>Custom_Field_1</Item>
+                    <Item>Custom_Field_2</Item>
+                    <Item>Custom_Field_3</Item>
+                    <Item>Custom_Field_4</Item>
+                    <Item>Custom_Field_5</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <MergeAction SecondTableName="HhKey" SecondTableExists="true" MergeMode="Lookup">
+                  <Columns>
+                    <Item>HHKey</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="AmId" Name2="AmId" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="CustNum" ColumnName="HHKey" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+                <SortAction>
+                  <SortColumns>
+                    <SortColumn ColumnName="AmId" SortOrder="Ascending" />
+                  </SortColumns>
+                </SortAction>
+                <ConvertDataTypesAction Conversion="TextToDate" FailureOption="KeepOriginal">
+                  <ColumnNames>
+                    <Item>CustStartDate</Item>
+                    <Item>Cust_AttritionDate</Item>
+                  </ColumnNames>
+                  <Format Value="yyyy-M-d" Type="Text" />
+                </ConvertDataTypesAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="Dt1">
+                      <Expression Value="if(isempty([CustStartDate]),empty(),&#xD;&#xA;  100*year([CustStartDate])+month([CustStartDate]))" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Dt2">
+                      <Expression Value="if(isempty([Cust_AttritionDate]),empty(),&#xD;&#xA;  100*year([Cust_AttritionDate])+month([Cust_AttritionDate]))" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="AfterColumn" AfterColumnName="CustStartDate" />
+                </AddColumnsAction>
+                <RuleAction NoMatchOption="UseDefault">
+                  <AddReplaceColumn ColumnName="Age" IsNewColumn="false" />
+                  <DefaultValue Value="[Age]" Type="Expression" />
+                  <Rules>
+                    <Rule If="isempty([Age])">
+                      <Then Value="0" Type="Constant" />
+                    </Rule>
+                    <Rule If="[Age]&lt;18">
+                      <Then Value="0" Type="Constant" />
+                    </Rule>
+                    <Rule If="[Age]&gt;99">
+                      <Then Value="99" Type="Constant" />
+                    </Rule>
+                  </Rules>
+                </RuleAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="BillPay">
+                      <Expression Value="if([BillPay]='Y',1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="DirectDeposit">
+                      <Expression Value="if([DirectDeposit]='Y',1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="AllClosed">
+                      <Expression Value="if(left([AllClosed],1)='C',1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="Detail (3)" Left="1021" Top="17" Width="313" Height="201" IsMinimized="false" ActiveActionIndex="4">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail" IsConditional="false" />
+                <MergeAction SecondTableName="Hoh" SecondTableExists="true" MergeMode="LeftJoin">
+                  <Columns>
+                    <Item>Hoh</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="AmId" Name2="AmId" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Age" ColumnName="Hoh" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Hoh">
+                      <Expression Value="ifempty([Hoh],0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="Est_Curr_Revenue_Total" Name2="Revenue" />
+                  </Names>
+                </RenameColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="Detail (4)" Left="723" Top="231" Width="431" Height="225" IsMinimized="false" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail (8)" IsConditional="false" />
+                <AggregateAction>
+                  <AggregateColumns>
+                    <AggregateColumn ColumnName="Age" Aggregation="Max" />
+                    <AggregateColumn ColumnName="Dt1" Aggregation="Min" />
+                    <AggregateColumn ColumnName="BranchNum" Aggregation="Max" />
+                    <AggregateColumn ColumnName="Bal_Check" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_MoneyMarket" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_Savings" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_CD" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_Loan" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_Retirement" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_Equity" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_Mortgage" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Bal_AutoLoan" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Deposit_Balance" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Loan_Balance" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Nmc_balance" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Revenue" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="NUM_ACCTS" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Check" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_MoneyMarket" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Savings" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_CD" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Loan" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Retirement" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Equity" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_Mortgage" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Total_AutoLoan" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Deposit_Count" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Loan_Count" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="Nmc_count" Aggregation="Sum" />
+                    <AggregateColumn ColumnName="BillPay" Aggregation="Max" />
+                    <AggregateColumn ColumnName="DirectDeposit" Aggregation="Max" />
+                    <AggregateColumn ColumnName="Dt2" Aggregation="Min" />
+                    <AggregateColumn ColumnName="AllClosed" Aggregation="Min" />
+                  </AggregateColumns>
+                  <GroupColumns>
+                    <Item>HHKey</Item>
+                  </GroupColumns>
+                </AggregateAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Total_Check">
+                      <Expression Value="ifempty([Total_Check],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_MoneyMarket">
+                      <Expression Value="ifempty([Total_MoneyMarket],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_Savings">
+                      <Expression Value="ifempty([Total_Savings],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_CD">
+                      <Expression Value="ifempty([Total_CD],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_Loan">
+                      <Expression Value="ifempty([Total_Loan],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_Retirement">
+                      <Expression Value="ifempty([Total_Retirement],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_Equity">
+                      <Expression Value="ifempty([Total_Equity],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_Mortgage">
+                      <Expression Value="ifempty([Total_Mortgage],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Total_AutoLoan">
+                      <Expression Value="ifempty([Total_AutoLoan],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Deposit_Count">
+                      <Expression Value="ifempty([Deposit_Count],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Loan_Count">
+                      <Expression Value="ifempty([Loan_Count],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Nmc_count">
+                      <Expression Value="ifempty([Nmc_count],0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Age">
+                      <Expression Value="if([Age]&lt;18,0,min([Age],99))" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="New">
+                      <Expression Value="if(ifempty([Dt1],0)&gt;202212,1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Yr10P">
+                      <Expression Value="if(ifempty([Dt1],222222)&lt;201401,1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Tenure">
+                      <Expression Value="2024-floor([Dt1]/100)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="All$">
+                      <Expression Value="[Deposit_Balance]+[Loan_Balance]" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="New2">
+                      <Expression Value="if(ifempty([Dt1],0)&gt;202112,1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Current">
+                      <Expression Value="1-[AllClosed]" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="Rightmost" />
+                </AddColumnsAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="Dormant">
+                      <Expression Value="if([Current]=1 and [All$]&lt;0.02,1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Gone">
+                      <Expression Value="if([AllClosed]=1 and ifempty([Dt2],0)&gt;=202301,1,0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="Rightmost" />
+                </AddColumnsAction>
+                <KeepRemoveColumnsAction Mode="Remove" FailIfColumnsNotFound="true">
+                  <ColumnNames>
+                    <Item>Dt1</Item>
+                    <Item>BranchNum</Item>
+                    <Item>Dt2</Item>
+                    <Item>AllClosed</Item>
+                    <Item>All$</Item>
+                    <Item>New2</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="HHKey" Name2="Ref" />
+                  </Names>
+                </RenameColumnsAction>
+                <SortAction>
+                  <SortColumns>
+                    <SortColumn ColumnName="Ref" SortOrder="Ascending" />
+                  </SortColumns>
+                </SortAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters">
+                <Filters>
+                  <Filter ColumnName="AllClosed" Width="230" ValueColumnWidth="120" CountColumnWidth="80" />
+                  <Filter ColumnName="Current" Width="230" ValueColumnWidth="120" CountColumnWidth="80" />
+                  <Filter ColumnName="Dormant" Width="230" ValueColumnWidth="120" CountColumnWidth="80" />
+                  <Filter ColumnName="Gone" Width="230" ValueColumnWidth="120" CountColumnWidth="80" />
+                  <Filter ColumnName="New" Width="230" ValueColumnWidth="120" CountColumnWidth="80" />
+                </Filters>
+              </AnalysisView>
+            </Table>
+            <Table Name="Detail (8)" Left="359" Top="223" Width="336" Height="224" IsMinimized="false" ActiveActionIndex="4">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail (3)" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Remove" FailIfColumnsNotFound="true">
+                  <ColumnNames>
+                    <Item>Bal_Check</Item>
+                    <Item>Bal_MoneyMarket</Item>
+                    <Item>Bal_Savings</Item>
+                    <Item>Bal_CD</Item>
+                    <Item>Bal_Loan</Item>
+                    <Item>Bal_Retirement</Item>
+                    <Item>Bal_Equity</Item>
+                    <Item>Bal_Mortgage</Item>
+                    <Item>Bal_AutoLoan</Item>
+                    <Item>Deposit_Balance</Item>
+                    <Item>Loan_Balance</Item>
+                    <Item>Revenue</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <MergeAction SecondTableName="NoEThou" SecondTableExists="true" MergeMode="Lookup">
+                  <Columns>
+                    <Item>Bal_Check</Item>
+                    <Item>Bal_MoneyMarket</Item>
+                    <Item>Bal_Savings</Item>
+                    <Item>Bal_CD</Item>
+                    <Item>Bal_Loan</Item>
+                    <Item>Bal_Retirement</Item>
+                    <Item>Bal_Equity</Item>
+                    <Item>Bal_Mortgage</Item>
+                    <Item>Bal_AutoLoan</Item>
+                    <Item>Deposit_Balance</Item>
+                    <Item>Loan_Balance</Item>
+                    <Item>Revenue</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="AmId" Name2="AmId" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Age">
+                      <Expression Value="if([Hoh]=1,[Age],0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="BranchNum">
+                      <Expression Value="if([Hoh]=1,[BranchNum],0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="Nmc_count">
+                      <Expression Value="[Loan_Count]-[Total_Mortgage]" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Nmc_balance">
+                      <Expression Value="asnumber([Loan_Balance])-asnumber(ifempty([Bal_Mortgage],0))" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="AfterColumn" AfterColumnName="Loan_Count" />
+                </AddColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="ForHoh" Left="435" Top="23" Width="244" Height="161" IsMinimized="false" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail" IsConditional="false" />
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Age">
+                      <Expression Value="if([Age]&gt;=18 and [Age]&lt;70,[Age]+200,[Age])" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <AggregateAction>
+                  <AggregateColumns>
+                    <AggregateColumn ColumnName="Age" Aggregation="Max" />
+                  </AggregateColumns>
+                  <GroupColumns>
+                    <Item>HHKey</Item>
+                  </GroupColumns>
+                </AggregateAction>
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="Age" Name2="MxAge" />
+                  </Names>
+                </RenameColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="HhKey" Left="53" Top="667" Width="210" Height="129" IsMinimized="false" ActiveActionIndex="0">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ThousandSeparator="Comma" ShowParsingErrors="false" IgnoreQuoting="false" NumericValuesTreatmentOption="AlwaysAsNumbers" ColumnsDontHaveHeaders="false" LoadAllColumns="true" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false">
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="AMI0103000324020100029315.txt" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Tab" />
+                  <Encoding EncodingType="UTF8" />
+                </ImportDelimitedTextAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="Hoh" Left="693" Top="26" Width="312" Height="181" IsMinimized="false" ActiveActionIndex="6">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>AmId</Item>
+                    <Item>HHKey</Item>
+                    <Item>Age</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Age">
+                      <Expression Value="if([Age]&gt;=18 and [Age]&lt;70,[Age]+200,[Age])" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <MergeAction SecondTableName="ForHoh" SecondTableExists="true" MergeMode="LeftJoin">
+                  <Columns>
+                    <Item>MxAge</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="HHKey" Name2="HHKey" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ExpressionFilterAction Condition="[Age]=[MxAge]" />
+                <DeduplicateAction CompareAllColumns="false">
+                  <ColumnNames>
+                    <Item>AmId</Item>
+                  </ColumnNames>
+                </DeduplicateAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="Hoh">
+                      <Expression Value="1" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="Rightmost" />
+                </AddColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="NoEThou" Left="73" Top="223" Width="253" Height="193" IsMinimized="false" ActiveActionIndex="1">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail (3)" IsConditional="false" />
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>AmId</Item>
+                    <Item>HHKey</Item>
+                    <Item>Bal_Check</Item>
+                    <Item>Bal_MoneyMarket</Item>
+                    <Item>Bal_Savings</Item>
+                    <Item>Bal_CD</Item>
+                    <Item>Bal_Loan</Item>
+                    <Item>Bal_Retirement</Item>
+                    <Item>Bal_Equity</Item>
+                    <Item>Bal_Mortgage</Item>
+                    <Item>Bal_AutoLoan</Item>
+                    <Item>Deposit_Balance</Item>
+                    <Item>Loan_Balance</Item>
+                    <Item>Revenue</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <IterateColumnAction ColumnName="Var" IterationMode="IterateAndAppendResults" UseDefaultResultTable="true" ExcludeColumns="true">
+                  <CallableUnitDefinition Type="Module">
+                    <ModuleName Value="NoE" Type="List" />
+                  </CallableUnitDefinition>
+                  <CallParameters />
+                  <ExcludeColumnNames>
+                    <Item>AmId</Item>
+                  </ExcludeColumnNames>
+                </IterateColumnAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+            <Table Name="Override" Left="1005" Top="505" Width="405" Height="251" IsMinimized="false" ActiveActionIndex="5">
+              <Actions>
+                <DeriveTableAction SourceTableName="Detail (4)" IsConditional="false" />
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="z1">
+                      <Expression Value="0" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="z2">
+                      <Expression Value="0" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="Bal">
+                      <Expression Value="[Deposit_Balance]" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="Rightmost" />
+                </AddColumnsAction>
+                <KeepRemoveColumnsAction Mode="Keep">
+                  <ColumnNames>
+                    <Item>Ref</Item>
+                    <Item>Age</Item>
+                    <Item>Deposit_Balance</Item>
+                    <Item>Nmc_balance</Item>
+                    <Item>z1</Item>
+                    <Item>z2</Item>
+                    <Item>Bal</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule Position="AfterColumn" AfterColumnName="Age" ColumnName="Bal" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="Deposit_Balance" Name2="Dep" />
+                    <NamePair Name1="Nmc_balance" Name2="Credit" />
+                  </Names>
+                </RenameColumnsAction>
+                <ExportDelimitedTextAction DecimalSeparator="Point" WrapTextMode="Auto" DontWriteColumnHeaders="false" PreserveFormatting="false" ExportFileMode="Create" DontWriteBom="false" FileExistsOption="Overwrite">
+                  <FileName Value="Cperf_ovr.txt" Type="Path" />
+                  <Separator SeparatorType="Comma" />
+                  <Encoding EncodingType="UTF8" />
+                </ExportDelimitedTextAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+          </ModelObjects>
+        </Group>
+      </Groups>
+      <Parameters />
+      <Report UseCustomFileNameForPdfExport="false" ShowPageBorders="true">
+        <Pages>
+          <Page Name="Page 1" IncludeInReport="true">
+            <ReportObjects />
+          </Page>
+        </Pages>
+        <PageSetup Orientation="Landscape" Margin="Narrow" Size="Letter" />
+      </Report>
+    </Module>
+    <Module Name="NoE" AutoRun="true" SelectedGroupName="Group 1">
+      <Groups>
+        <Group Name="Group 1">
+          <ModelObjects>
+            <Table Name="Var" Left="108" Top="40" Width="376" Height="463" IsMinimized="false" ActiveActionIndex="4">
+              <Actions>
+                <InputAction>
+                  <MetaColumns>
+                    <MetaColumn OriginalName="Var" Width="145" />
+                  </MetaColumns>
+                </InputAction>
+                <AddColumnsAction ColumnExistsOption="Rename">
+                  <Columns>
+                    <NameExpressionPair Name="p">
+                      <Expression Value="if(istext([Var]),find([Var],'E'),0)" Type="Expression" />
+                    </NameExpressionPair>
+                    <NameExpressionPair Name="e">
+                      <Expression Value="if(istext([Var]),asnumber(mid([Var],find([Var],'E')+1,99)),0)" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                  <InsertPosition Position="Rightmost" />
+                </AddColumnsAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Var">
+                      <Expression Value="if([p]=0,[Var],&#xD;&#xA;  if([e]&gt;0,asnumber(left([Var],[p]-1))*pow(10,[e]),&#xD;&#xA;    asnumber(left([Var],[p]-1))/pow(10,abs([e]))))" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="Var">
+                      <Expression Value="if(isempty([Var]),0,round(0.001*[Var],3))" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+                <KeepRemoveColumnsAction Mode="Remove" FailIfColumnsNotFound="true">
+                  <ColumnNames>
+                    <Item>p</Item>
+                    <Item>e</Item>
+                  </ColumnNames>
+                </KeepRemoveColumnsAction>
+              </Actions>
+              <AnalysisView LayoutMode="Filters" />
+            </Table>
+          </ModelObjects>
+        </Group>
+      </Groups>
+      <Parameters />
+      <Report UseCustomFileNameForPdfExport="false" ShowPageBorders="true">
+        <Pages>
+          <Page Name="Page 1" IncludeInReport="true">
+            <ReportObjects />
+          </Page>
+        </Pages>
+        <PageSetup Orientation="Landscape" Margin="Narrow" Size="Letter" />
+      </Report>
+    </Module>
+  </Modules>
+  <ProtectedDataConnectors />
+  <Resources />
+</Project>

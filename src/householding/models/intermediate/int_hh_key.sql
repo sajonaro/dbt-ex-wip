@@ -1,11 +1,11 @@
 with ami as (
     select *
-    from {{ source('input_data', 'AMI0103000324020100029315') }}
+    from {{ ref('stg_ami') }}
 ),
 
 -- rename columns, drop unnecessary columns, cast columns to correct types
 final as (
-    select *
+    select  *      
     from ami
 )
 
