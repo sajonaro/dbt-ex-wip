@@ -36,6 +36,3 @@ models:
     staging:
       +materialized: view
 
-seeds:
-  householding:
-    +delimeter: '\t'

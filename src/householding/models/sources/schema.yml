@@ -1,7 +1,0 @@
-version: 2
-
-sources:
-  - name: main
-    tables:
-      - name: AMD0103000224020100029315
-      - name: AMI0103000324020100029315

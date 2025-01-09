@@ -1,0 +1,15 @@
+householding:
+  outputs:
+    dev:
+      type: duckdb
+      schema: hh
+      path: ../cperf.duckdb
+      threads: 1
+
+    prod:
+      type: duckdb
+      schema: householding
+      path: Cperf.duckdb
+      threads: 4
+
+  target: dev

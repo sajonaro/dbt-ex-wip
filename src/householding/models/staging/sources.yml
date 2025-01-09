@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: input_data
+    database: cperf
+    description: 'input values for our models, ingested from .txt files'
+    schema: main
+    tables:
+      - name: AMD0103000224020100029315
+        description: 'account level data'
+      - name: AMI0103000324020100029315
+        description: 'account level index'

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+duckdb ../cperf.duckdb "CREATE TABLE AMD0103000224020100029315 AS FROM read_csv('./seeds/AMD0103000224020100029315.txt');" 
+duckdb ../cperf.duckdb "CREATE TABLE AMI0103000324020100029315 AS FROM read_csv('./seeds/AMI0103000324020100029315.txt');" 
