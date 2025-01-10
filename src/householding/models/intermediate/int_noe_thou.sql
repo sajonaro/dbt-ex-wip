@@ -9,12 +9,14 @@ keep_selected_columns as (
     from detail3
 ),
 
--- TODO
---iterate by column module NOE and apprend results    
+
+--iterate over each ech column and each row (check macro definitions)    
 iterate_over_noe as  (
-    select *
-    from keep_selected_columns
-),
+       select
+         {{ loop_over_columns('keep_selected_columns',  'round_to_mill(parse_scientific_notation([col_name]))') }}
+       from keep_selected_columns
+     )
+
 
 final as (
     select *
