@@ -42,17 +42,12 @@ filter_age_equals_mxage as (
     where MxAge == Age 
 ),
 
-ranked_by_amid  AS (
-    select 
-        *,
-        ROW_NUMBER() over (PARTITION BY AmId ORDER BY HHKey) AS row_num
-    from 
-        filter_age_equals_mxage
-),
-
 dedup_by_amid as (
-    DELETE FROM ranked_by_amid
-    WHERE row_num > 1;
+    {{ dbt_utils.deduplicate(
+        relation='ranked_by_amid',
+        partition_by='AmId',
+        order_by='AmId, row_num'
+    )}}
 )
 
 add_hoh_1 as (

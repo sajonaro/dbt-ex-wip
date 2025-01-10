@@ -16,6 +16,7 @@ poetry run dbt clean
 duckdb ../cperf.duckdb "SHOW ALL TABLES;"
 
 #build
+poetry run dbt deps
 poetry run dbt build
 
 
