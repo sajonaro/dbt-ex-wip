@@ -1,7 +1,7 @@
 with derived_from_detail_8 as (
     select
         *
-    from {{ ref('int_detail_4') }}
+    from {{ ref('int_detail_8') }}
 ),
 
 aggregate_and_group_by_hhkey   as (
@@ -82,7 +82,7 @@ coalesce_columns as (
 ),
 normalize_age as (
     select
-        {{ all_columns | except('Age')  }},
+        {{ star_cte('coalesce_columns', ['Age']) }},
         case
             when [Age] < 18 then 0
             else MIN([Age], 99)
@@ -124,13 +124,13 @@ calculate_2_more_columns as (
 ),
 remove_some_columns as (
     select
-        {{ all_columns | except('ALL$', 'AllClosed', 'BranchNum', 'Dt1','Dt2','New2')  }}
+        {{ star_cte('calculate_2_more_columns', ['ALL$', 'AllClosed', 'BranchNum', 'Dt1','Dt2','New2']) }}
     from calculate_2_more_columns
 
 ),
 rename_hhkey_and_sort as (
     select
-        {{ all_columns | except('HHKey')  }},
+        {{ star_cte('remove_some_columns', ['HHKey']) }},
         [HHKey] as Ref
     from remove_some_columns
     order by Ref

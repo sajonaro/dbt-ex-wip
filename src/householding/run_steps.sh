@@ -1,31 +1,25 @@
 #! /bin/bash
 
-#convert txt to csv (and remove extra /t symbols)
-# ./seeds/csv_clean.sh
 
+### BELOW ARE THE STEPS TO RUN THE PIPELINE. 
 
-
-#remove db
+### 1. Clean evrything up
+#delete the db
 rm ../cperf.duckdb
+#clean dbt via cli
 poetry run dbt clean
 
-#and import data into db
+### 2. Seed indput data
 ./seeds/csv_import.sh
-
-#see tables
+# a quick check that tables indeed exist
 duckdb ../cperf.duckdb "SHOW ALL TABLES;"
 
-#build
+
+###  3. Run the dbt 'pipeline' ( models, tests, snapshots, etc) 
 poetry run dbt deps
 poetry run dbt build
 
 
+### 4. Export results
 #export result into txt file
-duckdb ../cperf.duckdb "COPY (select * from hh.stg_ami) TO '../cperf.txt' (HEADER, DELIMITER ';');" 
-
-
-
-
-
-
-
+duckdb ../cperf.duckdb "COPY (select * from hh.cperf) TO '../cperf.txt' (HEADER, DELIMITER ',');" 

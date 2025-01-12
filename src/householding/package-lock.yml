@@ -1,10 +1,4 @@
 packages:
   - package: dbt-labs/dbt_utils
     version: 1.3.0
-  - package: sdebruyn/dbt_duckdb_utils
-    version: 0.1.0
-  - package: calogica/dbt_expectations
-    version: 0.10.4
-  - package: calogica/dbt_date
-    version: 0.10.1
-sha1_hash: 86fb4587a32a13a51ec9a1f8e455b6ca1b20982e
+sha1_hash: 226ae69cdfbc9367e2aa2c472b01f99dbce11de0

@@ -1,6 +1,43 @@
 with removed_20_columns_from_amd as (
     select
-        AmId, CustNum, Age, CustStartDate,	Cust_AttritionDate,	AllClosed,	BranchId,	BranchNum,	Bal_Check,	Total_Check,	Bal_MoneyMarket,	Total_MoneyMarket,	Bal_Savings	,Total_Savings	,Bal_CD	,Total_CD,	Bal_Loan,	Total_Loan	,		,Bal_Retirement,	Total_Retirement,	Bal_Equity,	Total_Equity,	Bal_Mortgage,	Total_Mortgage,	Bal_AutoLoan,	Total_AutoLoan,	Deposit_Balance,	Deposit_Count,	Loan_Balance,	Loan_Count,	Est_Curr_Revenue_Total,	Est_Curr_Revenue_Segment,	Cust_Tenure	NUM_ACCTS,NUM_Products,Num_Services,BillPay	,DirectDeposit,		
+        AmId,
+        CustNum,
+        Age,
+        CustStartDate,
+        Cust_AttritionDate,
+        AllClosed,
+        BranchId,
+        BranchNum,
+        Bal_Check,
+        Total_Check,
+        Bal_MoneyMarket,
+        Total_MoneyMarket,
+        Bal_Savings,
+        Total_Savings,
+        Bal_CD,
+        Total_CD,
+        Bal_Loan,
+        Total_Loan,
+        Bal_Retirement,
+        Total_Retirement,
+        Bal_Equity,
+        Total_Equity,
+        Bal_Mortgage,
+        Total_Mortgage,
+        Bal_AutoLoan,
+        Total_AutoLoan,
+        Deposit_Balance,
+        Deposit_Count,
+        Loan_Balance,
+        Loan_Count,
+        Est_Curr_Revenue_Total,
+        Est_Curr_Revenue_Segment,
+        Cust_Tenure,
+        NUM_ACCTS,
+        NUM_Products,
+        Num_Services,
+        BillPay,
+        DirectDeposit
     from {{ ref('stg_amd') }}
 ),
 
@@ -19,7 +56,7 @@ merged_with_hh_key as  (
 -- reorder columns (HHkey after CustNum ), sort by AmId asc, convert dates
 reordered_sorted_date_converted as (
     select 
-        AmId, CustNum, HHKey, cast(CustStartDate as DATE), cast(Cust_AttritionDate as DATE), AllClosed, BranchId, BranchNum, Age, 
+        AmId, CustNum, HHKey, cast(CustStartDate as date), cast(Cust_AttritionDate as date), AllClosed, BranchId, BranchNum, Age, 
         Bal_Check, Total_Check, Bal_MoneyMarket, Total_MoneyMarket, Bal_Savings, Total_Savings, Bal_CD, Total_CD, 
         Bal_Loan, Total_Loan, Bal_Retirement, Total_Retirement, Bal_Equity, Total_Equity, Bal_Mortgage, Total_Mortgage, 
         Bal_AutoLoan, Total_AutoLoan, Deposit_Balance, Deposit_Count, Loan_Balance, Loan_Count, Est_Curr_Revenue_Total, 
@@ -41,7 +78,7 @@ more_columns_converted as (
         end as Dt2,
         cast(Cust_AttritionDate as DATE),
         case 
-            when SUBSTRING(AllClosed,1,1) is 'C' 1
+            when substring(AllClosed,1,1) is 'C' 1
             else 0
         end as AllClosed,    
         BranchId, BranchNum,
@@ -61,7 +98,7 @@ more_columns_converted as (
         case
             when DirectDeposit is 'Y' then 1 
             else 0 
-        end as DirectDeposit,
+        end as DirectDeposit
         
     from reordered_sorted_date_converted
 ),

@@ -34,8 +34,8 @@ left_joined_with_noethou_by_amid as (
 ),
 
 replace_age_branchnum as (
-
-    select  {{ all_columns | except('Age', 'branchnum')  }},
+    select  
+        {{ star_cte('left_joined_with_noethou_by_amid', ['Age','BranchNum']) }},
         case
             when [Hoh] == 1 then [Age] 
             else  0 
@@ -49,14 +49,14 @@ replace_age_branchnum as (
 
 add_nmc_count as (
     select
-        {{ all_columns | insert_after('Loan_count',
-             { 'Nmc_count' : 'Loan_Count-Total_Mortgage' }) }}
+        *,
+        (Loan_Count - Total_Mortgage) AS Nmc_count
     from replace_age_branchnum
 ),
 add_nmc_balance as (
-    elect
-        {{ all_columns | insert_after('Loan_count',
-             { 'Nmc_balance' : {{ dbt_utils.as_number('Loan_Balance') }} - {{ dbt_utils.as_number(dbt_utils.coalesce('Bal_Mortgage', 0)) }}}) }}
+    select
+        *,
+        {{ dbt_utils.as_number('Loan_Balance') }} - {{ dbt_utils.as_number(dbt_utils.coalesce('Bal_Mortgage', 0)) }} AS Nmc_balance
     from add_nmc_count
 )
 

@@ -13,7 +13,7 @@ keep_selected_columns as (
 --iterate over each ech column and each row (check macro definitions)    
 iterate_over_noe as  (
        select
-         {{ loop_over_columns('keep_selected_columns',  'round_to_mill(parse_scientific_notation([col_name]))') }}
+         {{ apply_transformation_to_all_cols_in_cte('keep_selected_columns',  'round_to_mill(parse_scientific_notation([col_name]))') }}
        from keep_selected_columns
      )
 
